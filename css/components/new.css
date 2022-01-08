@@ -1,0 +1,9 @@
+.new {
+  width: 5px;
+  height: 5px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+  background-color: tomato;
+}
