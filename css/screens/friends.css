@@ -45,5 +45,5 @@
 
 #splash-screen i {
   font-size: 150px;
-  color: #3c1e1e;
+  color: var(--brown);
 }

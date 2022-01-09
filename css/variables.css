@@ -1,6 +1,7 @@
 :root {
   --red: tomato;
   --yellow: #fae100;
+  --brown: #3c1e1e;
   --lightgray: rgba(0, 0, 0, 0.5);
   --horizontal-space: 25px;
   --main-border: 1px solid rgba(0, 0, 0, 0.1);
