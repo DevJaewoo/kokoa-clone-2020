@@ -61,5 +61,5 @@
 
 .user-component__alert {
   margin-left: 1px;
-  color: #ff5b49;
+  color: var(--red);
 }

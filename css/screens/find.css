@@ -36,7 +36,7 @@
   height: 15px;
   margin-right: 5px;
   border-radius: 50%;
-  background-color: tomato;
+  background-color: var(--red);
 }
 
 .open-post__member-count {
@@ -62,7 +62,7 @@
   width: 120px;
   height: 120px;
   border-radius: 10%;
-  background-color: tomato;
+  background-color: var(--red);
 }
 
 .open-post__heart-count {
@@ -80,6 +80,28 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 12px;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: none;
+    color: white;
+  }
+
+  50% {
+    transform: scale(1.2);
+    color: var(--red);
+  }
+
+  100% {
+    transform: none;
+    color: white;
+  }
+}
+
+.open-post__heart-count:hover i.fa-heart {
+  will-change: transform;
+  animation: heartBeat 0.5s ease-in-out infinite;
 }
 
 .open-post__heart-count span {

@@ -10,9 +10,23 @@
   font-weight: 600;
 }
 
+@keyframes spinHeaderIcon {
+  0% {
+    transform: none;
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
 .screen-header__icons span {
   margin-left: 25px;
   position: relative;
+}
+
+.screen-header__icons i.fa-cog:hover {
+  animation: spinHeaderIcon 1s linear infinite;
 }
 
 .screen-header__notification {

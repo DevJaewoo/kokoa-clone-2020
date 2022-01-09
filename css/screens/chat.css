@@ -1,16 +1,18 @@
 #chat-screen {
-  height: 200vh;
+  height: 100vh;
   background-color: #abc1d1;
+  overflow-x: hidden;
 }
 
 #chat-screen .status-bar {
-  z-index: 1;
+  z-index: 2;
   background-color: #abc1d1;
 }
 
 #chat-screen .alt-header {
   width: 100%;
   position: fixed;
+  z-index: 1;
   box-sizing: border-box;
   background-color: #abc1d1;
 }
@@ -44,7 +46,7 @@
   height: 50px;
   margin-right: 15px;
   border-radius: 50%;
-  background-color: tomato;
+  background-color: var(--red);
 }
 
 .message__content {
@@ -68,6 +70,7 @@
 
 .message__author,
 .message__time {
+  z-index: 0;
   opacity: 0.9;
   font-size: 15px;
 }
@@ -107,14 +110,16 @@
   bottom: 0;
   box-sizing: border-box;
   background-color: white;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply__column > i {
   opacity: 0.5;
+  transition: opacity 0.3s;
 }
 
 .reply__column:first-child {
-  /* width: 10%; */
+  /* width: 8%; */
   margin-right: 15px;
 }
 
@@ -130,29 +135,98 @@
   border: var(--main-border);
   border-radius: 20px;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply__column:last-child > i {
   position: absolute;
   top: 7px;
   right: 40px;
-}
-
-.reply__column:last-child button {
-  position: absolute;
-  top: 2px;
-  right: 2px;
+  transition: opacity 0.3s;
 }
 
 .reply__column:last-child button {
   width: 26px;
   height: 26px;
+
+  position: absolute;
+  top: 2px;
+  right: 2px;
+
   border: none;
   border-radius: 50%;
+
   background-color: var(--yellow);
+
+  transition: opacity 0.3s;
+}
+
+.reply__column:last-child button {
 }
 
 .reply__column button:focus,
 .reply__column button:active {
   outline: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.main-chat {
+  animation: fadeIn 1s linear;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.message-row {
+  animation: slideFromLeft 1s ease-in-out forwards;
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.message-row--own {
+  animation: slideFromRight 1s ease-in-out forwards;
+}
+
+.reply:focus-within {
+  transform: translateY(80px);
+}
+
+.reply:focus-within i,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply:focus-within input {
+  width: calc(100% + 33px);
+  transform: translateX(-33px) translateY(-80px);
 }
