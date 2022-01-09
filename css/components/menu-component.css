@@ -1,0 +1,13 @@
+.menu-component {
+  margin-bottom: 10px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: var(--main-border);
+  color: var(--lightgray);
+}
+
+.menu-component__column--light {
+  opacity: 0.8;
+}

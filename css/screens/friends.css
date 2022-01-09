@@ -12,15 +12,5 @@
 }
 
 .friends-screen__channel {
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.friends-screen__channel-header {
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--lightgray);
+  margin-top: 5px;
 }
