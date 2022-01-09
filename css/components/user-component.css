@@ -6,7 +6,7 @@
 }
 
 .user-component:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .user-component__column:first-child {
